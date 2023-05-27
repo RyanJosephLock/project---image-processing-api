@@ -1,0 +1,38 @@
+{
+  "name": "node-boilerplate",
+  "version": "1.0.0",
+  "description": "A boilerplate dev environment, including Node.js, TypeScript, esLint, Prettier, Express, Nodemon and Supertest.",
+  "main": "index.js",
+  "scripts": {
+    "prettier": "prettier --config .prettierrc src/**/*.ts --write",
+    "lint": "eslint . --ext .ts",
+    "build": "rimraf ./build && tsc && copyfiles --up 1 src/assets/** build",
+    "jasmine": "jasmine",
+    "test": "npm run build && npm run jasmine",
+    "start": "nodemon build/index.js",
+    "index": "node build/index.js"
+  },
+  "author": "Ryan Lock",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/jasmine": "^4.3.1",
+    "@types/node": "^20.2.1",
+    "@types/supertest": "^2.0.12",
+    "@typescript-eslint/eslint-plugin": "^5.59.6",
+    "@typescript-eslint/parser": "^5.59.6",
+    "copyfiles": "^2.4.1",
+    "eslint": "^8.40.0",
+    "jasmine": "^5.0.0",
+    "jasmine-spec-reporter": "^7.0.0",
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.8",
+    "rimraf": "^5.0.1",
+    "supertest": "^6.3.3",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "sharp": "^0.32.1"
+  }
+}
