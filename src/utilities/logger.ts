@@ -7,7 +7,7 @@ const logger = (
   // eslint-disable-next-line @typescript-eslint/ban-types
   next: Function
 ): void => {
-  const url = req.url;
+  const url: string = req.url;
   console.log(`${url} URL was entered`);
   next();
 };

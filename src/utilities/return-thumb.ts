@@ -19,7 +19,7 @@ const generateThumb = async (
       .toFile(`${__dirname}/../assets/thumb/${thumbFileName}.jpg`);
     return thumbFileName;
   } catch (err) {
-    const errorInput = JSON.stringify(err, Object.getOwnPropertyNames(err));
+    const errorInput: string = JSON.stringify(err, Object.getOwnPropertyNames(err));
     if (
       errorInput.includes(
         'Error: Processed image is too large for the JPEG format'
@@ -39,7 +39,7 @@ const returnThumb = (
   inputWidth: number,
   inputHeight: number
 ): Promise<string> | string => {
-  const thumbFileName = `${inputFileName}-${inputWidth}x${inputHeight}`;
+  const thumbFileName: string = `${inputFileName}-${inputWidth}x${inputHeight}`;
   if (!checkFileExists(thumbFileName)) {
     console.log('thumb generated');
     return generateThumb(inputFileName, inputWidth, inputHeight, thumbFileName);
